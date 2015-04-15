@@ -1,0 +1,18 @@
+install.packages("devtools")#
+devtools::install_github("hadley/bigrquery")#
+#
+library(bigrquery)#
+project <- "dazzling-will-91618" # put your project ID here#
+sql <- "SELECT * FROM [dazzling-will-91618:taxitest.taxi5] LIMIT 200"#
+query_exec(sql, project = project)#
+#
+# Access code:#
+# 4/OhK2GvHVghtg-fXt5_WBGrTTQ3oP0emV6mstUkubJF0.UuWMWrqz-SEUJvIeHux6iLaNNwR9mQI
+library(bigrquery)#
+project <- "dazzling-will-91618" # put your project ID here#
+sql <- "SELECT * FROM [dazzling-will-91618:taxitest.taxi5] LIMIT 200"#
+query_exec(sql, project = project)
+library(bigrquery)#
+project <- "dazzling-will-91618" # put your project ID here#
+sql <- "SELECT * FROM [dazzling-will-91618:taxitest.taxi5] LIMIT 200"#
+query_exec(sql, project = project)
