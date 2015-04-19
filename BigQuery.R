@@ -1,18 +1,17 @@
-# install.packages("devtools")
-# devtools::install_github("hadley/bigrquery")
+install.packages("devtools")
+devtools::install_github("hadley/bigrquery")
 
 library(bigrquery)
 project <- "dazzling-will-91618" # put your project ID here
-# sql <- "SELECT * FROM [dazzling-will-91618:taxitest.taxi5] LIMIT 200"
-# sql <- "SELECT COUNT(*) FROM [dazzling-will-91618:taxi_all.taxi_all_2013];"
-sql <- "SELECT * FROM [dazzling-will-91618:taxi_all.taxi_all_2013] LIMIT 200" #THIS IS THE MASTER DATABASE
 
-query_exec(sql, project = project)
+# sql <- "SELECT COUNT(*) FROM [dazzling-will-91618:taxi_all.taxi_all_2013];" #This statement counts the number of rows. 
+sql_master <- "SELECT * FROM [dazzling-will-91618:taxi_all.taxi_all_2013] LIMIT 200" #THIS IS THE MASTER DATABASE
+sql_stats <- "SELECT * FROM [dazzling-will-91618:taxi_all.nycb2010_stats] LIMIT 200" #THIS IS THE GEOID CENSUS BLOCK 2010 dataset
+
+query_exec(sql_master, project = project)
+query_exec(sql_stats, project = project)
+
+
 
 # COPY AND PASTE THE LINK THEY GIVE YOU TO YOUR BROWSER AND THEN ACCEPT WITH LOGIN TO GOOGLE AND PASTE THE AUTHORIZATION CODE THEY GIVE YOU
 
-# Authorization - Danny - code:
-# iMac
-# 4/OhK2GvHVghtg-fXt5_WBGrTTQ3oP0emV6mstUkubJF0.UuWMWrqz-SEUJvIeHux6iLaNNwR9mQI
-# MacBook Pro
-# 4/rqJStTba7RLNXaFpLsuhl87Mw7uzedsxEV3vsLQalP0.YhPJBEFsNmYbgtL038sCVntpOU99mQI
